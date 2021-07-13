@@ -6,6 +6,17 @@ public class Block : MonoBehaviour
 {
     [SerializeField] AudioClip breakSound;
 
+    //Cached Reference
+    Level level;
+    
+
+    public void Start()
+    {
+        level = FindObjectOfType<Level>();
+        level.CountBreakableBlocks();
+
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
