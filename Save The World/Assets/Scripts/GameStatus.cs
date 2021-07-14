@@ -40,7 +40,7 @@ public class GameStatus : MonoBehaviour
     void Update()
     {
         Time.timeScale = gameSpeed;
-        AddToScore();
+
     }
 
     public void AddToScore()
