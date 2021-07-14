@@ -13,10 +13,26 @@ public class GameStatus : MonoBehaviour
     //State Varibles
     [SerializeField] int currentScore = 0;
 
+
+    private void Awake()
+    {
+        int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
+        if (gameStatusCount > 1)
+        {
+            Destroy(gameObject);
+
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = currentScore.ToString();
+       
             
     }
 
@@ -24,6 +40,7 @@ public class GameStatus : MonoBehaviour
     void Update()
     {
         Time.timeScale = gameSpeed;
+        AddToScore();
     }
 
     public void AddToScore()
