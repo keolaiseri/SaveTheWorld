@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    //Parameters
     [SerializeField] int breakableBlocks; //Serialzied for debugging
 
+    //Cached Reference
+    SceneLoader sceneLoader;
+
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
 
     public void CountBreakableBlocks()
     {
@@ -13,5 +21,18 @@ public class Level : MonoBehaviour
 
 
     }
-    
+
+    public void BlockDestroyed()
+    {
+        breakableBlocks--;
+        if(breakableBlocks <= 0)
+        {
+            sceneLoader.LoadNextScene();
+        }
+
+    }
+
+
+
 }
+
