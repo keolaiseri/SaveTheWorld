@@ -50,7 +50,11 @@ public class GameStatus : MonoBehaviour
     }
 
 
+    public void ResetGame()
+    {
 
+        Destroy(gameObject);
+    }
 
 }
 
