@@ -14,35 +14,54 @@ public class Block : MonoBehaviour
 
     public void Start()
     {
-        
-        level = FindObjectOfType<Level>();
-        level.CountBreakableBlocks();
+        CountBreakableBlocks();
 
     }
 
+    private void CountBreakableBlocks()
+    {
+        level = FindObjectOfType<Level>();
 
+        if (tag == "Breakable")
+        {
+            level.CountBlocks();
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        BlockDestroyed();
-        
-        
+        if (tag == "Breakable")
+        {
+            BlockDestroyed();
+        }
+
 
     }
 
     private void BlockDestroyed()
     {
+        
+        PlayBlockDestroySFX();
+        Destroy(gameObject);
+        level.BlockDestroyed();
+        TriggerSparklesVFX();
+
+
+
+    }
+
+    private void PlayBlockDestroySFX()
+    {
         FindObjectOfType<GameSession>().AddToScore();
         AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
-        Destroy(gameObject);
-        level.BlockDestroyed(); 
-
     }
 
     private void TriggerSparklesVFX()
     {
 
-        GameObject sparkles = Instantiate(blockSparklesVFX);
+        GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 1f);
+        
 
     }
 
