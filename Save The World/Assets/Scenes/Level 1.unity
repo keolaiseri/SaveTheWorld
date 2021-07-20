@@ -3592,6 +3592,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Play Space
       objectReference: {fileID: 0}
+    - target: {fileID: 3917460488207107106, guid: 21c9e1057beeb410e89ea878185d1a68,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 91de86069ebc043f9839aa60e8bef14e,
+        type: 3}
+    - target: {fileID: 3917460488207107109, guid: 21c9e1057beeb410e89ea878185d1a68,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5663006
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917460488207107109, guid: 21c9e1057beeb410e89ea878185d1a68,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.76284707
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917460488207107109, guid: 21c9e1057beeb410e89ea878185d1a68,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917460488207107109, guid: 21c9e1057beeb410e89ea878185d1a68,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.937
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c9e1057beeb410e89ea878185d1a68, type: 3}
 --- !u!1001 &4841505238115235732
